@@ -6,5 +6,6 @@ const router = Router();
 
 router.post('/', new UserControllers().create);
 router.post('/surveys', new SurveysController().create);
+router.get('/surveys/list', new SurveysController().show);
 
 export { router };
