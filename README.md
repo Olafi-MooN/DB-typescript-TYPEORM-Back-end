@@ -1,5 +1,5 @@
-# DB-typescript-TYPEORM-Back-end
-Um exemplo basico de como é realizada a conexão do typeorm com o  typescript
+# Back-end com TYPEORM, Nodemailer e Javascript
+Um exemplo basico de como é realizada a conexão do typeorm com o typescript
 
 ### Oque é o projeto ?
 Esse projeto é uma versão do NLW4 feito pela Rocket seat. 
