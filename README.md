@@ -1,4 +1,4 @@
-# Back-end com TYPEORM, Nodemailer e Javascript
+# Back-end com TYPEORM, Nodemailer e Typecript
 Um exemplo basico de como é realizada a conexão do typeorm com o typescript
 
 ### Oque é o projeto ?
