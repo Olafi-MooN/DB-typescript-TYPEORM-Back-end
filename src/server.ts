@@ -3,13 +3,14 @@ import express from 'express';
 import { router } from './routes/Routes';
 import "./database/connection";
 
-require('dotenv').config();
 
 const server = express();
 
 server.use(express.json());
 server.use(router);
 
-server.listen(3000, () => {
-    console.log('O servidor foi iniciado na porta: ' + '3000');
+const PORT = (process.env.PORT || 3001);
+
+server.listen(PORT, () => {
+    console.log('O servidor foi iniciado na porta: ' + PORT);
 })

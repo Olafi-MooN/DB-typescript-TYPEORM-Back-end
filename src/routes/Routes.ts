@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { SendEmailsController } from '../controllers/SendEmailsController';
+import { CreateSurveysController } from '../controllers/CreateSurveysController';
 import { SurveysController } from '../controllers/SurveysController';
 import { UserControllers } from '../controllers/UserController';
 
@@ -11,7 +11,7 @@ router.delete('/delete', new UserControllers().delete);
 router.post('/surveys', new SurveysController().create);
 router.get('/surveys/list', new SurveysController().show);
 
-router.post('/sendEmail', new SendEmailsController().execute);
+router.post('/sendEmail', new CreateSurveysController().execute);
 
 
 export { router };

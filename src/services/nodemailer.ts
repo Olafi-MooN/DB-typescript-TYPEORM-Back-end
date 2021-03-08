@@ -3,6 +3,7 @@ import { google } from 'googleapis';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
 import Mail from 'nodemailer/lib/mailer';
 
+require('dotenv').config();
 
 interface typeSendEmail {
     (email: typeConfigSendEmail, messageError?: string, messageSucess?: string): Promise<boolean>
@@ -52,7 +53,7 @@ const configSendEmail = async (config: typeConfigSendEmail) => {
             service: 'gmail',
             auth: {
                 type: 'OAuth2',
-                user: 'alefmastertutor@gmail.com',
+                user: process.env.EMAILUSER,
                 clientId: credentials.clienteID,
                 clientSecret: credentials.secretKey,
                 refreshToken: credentials.refresh_token,
@@ -61,7 +62,7 @@ const configSendEmail = async (config: typeConfigSendEmail) => {
         } as SMTPTransport.Options)
 
         const mailOptions : Mail.Options = {
-            from: 'Alef Master <alefmastertutor@gmail.com>',
+            from: `Alef Master < ${process.env.EMAILUSER}>`,
             to: config.object.emailTo,
             subject: config.object.subject,
             text: config.object.subjectDescription,

@@ -4,7 +4,7 @@ import { UserRepositories } from '../repositories/UserRepositories';
 import { surveysRepositories } from '../repositories/SurveysRepositories';
 import { surveysUsersRepositories } from '../repositories/SurveysUsersRepositories';
 
-class SendEmailsController {
+class CreateSurveysController {
 
     async execute(req: Request, res: Response){
         const  { email, survey_id } = req.body;
@@ -49,4 +49,4 @@ class SendEmailsController {
 
 }
 
-export { SendEmailsController };
+export { CreateSurveysController };
