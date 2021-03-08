@@ -3,6 +3,8 @@ import express from 'express';
 import { router } from './routes/Routes';
 import "./database/connection";
 
+require('dotenv').config();
+
 const server = express();
 
 server.use(express.json());

@@ -17,11 +17,23 @@ interface typeConfigSendEmail {
     }
 }
 
+/* 
+    CREDENCIAIS DO GOOGLE
+
+    Para o envio de e-mail funcionar é necessario configurar as suas credenciais
+    em https://console.cloud.google.com/ e permitir a autenticação com o Oauth2.
+    
+    Após configurar acesse o link https://developers.google.com/oauthplayground
+    no primeiro passo, adicione https://mail.google.com/ como escopo.
+    
+
+*/
+
 const credentials = {
-    clienteID: "1027847045403-cajko784q9rak2ilsaah03hcjprrclve.apps.googleusercontent.com",
-    secretKey: "3X1hHVCEXEycCO2XycbW9fsi",
-    refresh_token: "1//04S16brZbMz1SCgYIARAAGAQSNwF-L9Ir5vcWUXdgBOCRM-WAnX0-K5dhyMSLMgBKm5uDwa5wkS4OPOm_cOjMQwh1kXg9g6jtWkU",
-    redirectUrl: "https://developers.google.com/oauthplayground" 
+    clienteID: process.env.CLIENTID,
+    secretKey: process.env.SECRETKEY,
+    refresh_token: process.env.REFRESHTOKEN,
+    redirectUrl: process.env.REDIRECTURL 
 }
     
 const oauth2Client = new google.auth.OAuth2(credentials.clienteID, credentials.secretKey, credentials.redirectUrl);
